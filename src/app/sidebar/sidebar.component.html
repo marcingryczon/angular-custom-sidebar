@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="header">
+    <div class="title">Menu</div>
+    <mat-icon (click)="closeSidenav()">close</mat-icon>
+  </div>
+  <div class="sidenav">
+    <div class="tabs-content" [ngSwitch]="selectedTab">
+      <app-account *ngSwitchCase="'account'"></app-account>
+      <app-shopping *ngSwitchCase="'shopping'"></app-shopping>
+      <app-settings *ngSwitchCase="'settings'"></app-settings>
+    </div>
+    <div class="tabs">
+      <div
+        class="tab"
+        [class.active]="tab.id === selectedTab"
+        (click)="selectTab(i)"
+        *ngFor="let tab of tabs; let i = index"
+      >
+        <mat-icon>{{ tab.icon }}</mat-icon>
+        <div class="label">{{ tab.label }}</div>
+      </div>
+    </div>
+  </div>
+</div>

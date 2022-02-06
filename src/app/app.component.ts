@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'sidebar-test';
+  showSidenav = true;
+  openSidenav(){
+    this.showSidenav = true;
+  }
+
+  closeSidenav(close: boolean){
+    this.showSidenav = !close;
+  }
 }
